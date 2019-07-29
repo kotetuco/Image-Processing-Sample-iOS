@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C5E137F22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; };
+		9C5E138622EFA5C9008EAEFF /* CameraFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */; };
+		9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5E137822EFA5C9008EAEFF /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5E138B22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; };
+		9C5E138C22EFA5C9008EAEFF /* CameraFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C89180822EFA33400806DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89180722EFA33400806DE5 /* AppDelegate.swift */; };
 		9C89180A22EFA33400806DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89180922EFA33400806DE5 /* ViewController.swift */; };
 		9C89180D22EFA33400806DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C89180B22EFA33400806DE5 /* Main.storyboard */; };
@@ -17,6 +22,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9C5E138022EFA5C9008EAEFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C5E137522EFA5C9008EAEFF;
+			remoteInfo = CameraFramework;
+		};
+		9C5E138222EFA5C9008EAEFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C89180322EFA33400806DE5;
+			remoteInfo = ImageProcessingSample;
+		};
+		9C5E138922EFA5C9008EAEFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C5E137522EFA5C9008EAEFF;
+			remoteInfo = CameraFramework;
+		};
 		9C89181922EFA33500806DE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
@@ -33,7 +59,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9C5E139222EFA5C9008EAEFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C5E138C22EFA5C9008EAEFF /* CameraFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5E137822EFA5C9008EAEFF /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
+		9C5E137922EFA5C9008EAEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5E137E22EFA5C9008EAEFF /* CameraFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFrameworkTests.swift; sourceTree = "<group>"; };
+		9C5E138722EFA5C9008EAEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C89180422EFA33400806DE5 /* ImageProcessingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageProcessingSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C89180722EFA33400806DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C89180922EFA33400806DE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,10 +96,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9C5E137322EFA5C9008EAEFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5E137B22EFA5C9008EAEFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5E137F22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C89180122EFA33400806DE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5E138B22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +136,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E137822EFA5C9008EAEFF /* CameraFramework.h */,
+				9C5E137922EFA5C9008EAEFF /* Info.plist */,
+			);
+			path = CameraFramework;
+			sourceTree = "<group>";
+		};
+		9C5E138422EFA5C9008EAEFF /* CameraFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */,
+				9C5E138722EFA5C9008EAEFF /* Info.plist */,
+			);
+			path = CameraFrameworkTests;
+			sourceTree = "<group>";
+		};
 		9C8917FB22EFA33400806DE5 = {
 			isa = PBXGroup;
 			children = (
 				9C89180622EFA33400806DE5 /* ImageProcessingSample */,
 				9C89181B22EFA33500806DE5 /* ImageProcessingSampleTests */,
 				9C89182622EFA33500806DE5 /* ImageProcessingSampleUITests */,
+				9C5E137722EFA5C9008EAEFF /* CameraFramework */,
+				9C5E138422EFA5C9008EAEFF /* CameraFrameworkTests */,
 				9C89180522EFA33400806DE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +172,8 @@
 				9C89180422EFA33400806DE5 /* ImageProcessingSample.app */,
 				9C89181822EFA33500806DE5 /* ImageProcessingSampleTests.xctest */,
 				9C89182322EFA33500806DE5 /* ImageProcessingSampleUITests.xctest */,
+				9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */,
+				9C5E137E22EFA5C9008EAEFF /* CameraFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +211,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9C5E137122EFA5C9008EAEFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		9C5E137522EFA5C9008EAEFF /* CameraFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5E139122EFA5C9008EAEFF /* Build configuration list for PBXNativeTarget "CameraFramework" */;
+			buildPhases = (
+				9C5E137122EFA5C9008EAEFF /* Headers */,
+				9C5E137222EFA5C9008EAEFF /* Sources */,
+				9C5E137322EFA5C9008EAEFF /* Frameworks */,
+				9C5E137422EFA5C9008EAEFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraFramework;
+			productName = CameraFramework;
+			productReference = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C5E137D22EFA5C9008EAEFF /* CameraFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C5E139322EFA5C9008EAEFF /* Build configuration list for PBXNativeTarget "CameraFrameworkTests" */;
+			buildPhases = (
+				9C5E137A22EFA5C9008EAEFF /* Sources */,
+				9C5E137B22EFA5C9008EAEFF /* Frameworks */,
+				9C5E137C22EFA5C9008EAEFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C5E138122EFA5C9008EAEFF /* PBXTargetDependency */,
+				9C5E138322EFA5C9008EAEFF /* PBXTargetDependency */,
+			);
+			name = CameraFrameworkTests;
+			productName = CameraFrameworkTests;
+			productReference = 9C5E137E22EFA5C9008EAEFF /* CameraFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9C89180322EFA33400806DE5 /* ImageProcessingSample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C89182C22EFA33500806DE5 /* Build configuration list for PBXNativeTarget "ImageProcessingSample" */;
@@ -135,10 +267,12 @@
 				9C89180022EFA33400806DE5 /* Sources */,
 				9C89180122EFA33400806DE5 /* Frameworks */,
 				9C89180222EFA33400806DE5 /* Resources */,
+				9C5E139222EFA5C9008EAEFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9C5E138A22EFA5C9008EAEFF /* PBXTargetDependency */,
 			);
 			name = ImageProcessingSample;
 			productName = ImageProcessingSample;
@@ -191,6 +325,13 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = kotetu;
 				TargetAttributes = {
+					9C5E137522EFA5C9008EAEFF = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					9C5E137D22EFA5C9008EAEFF = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 9C89180322EFA33400806DE5;
+					};
 					9C89180322EFA33400806DE5 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -220,11 +361,27 @@
 				9C89180322EFA33400806DE5 /* ImageProcessingSample */,
 				9C89181722EFA33500806DE5 /* ImageProcessingSampleTests */,
 				9C89182222EFA33500806DE5 /* ImageProcessingSampleUITests */,
+				9C5E137522EFA5C9008EAEFF /* CameraFramework */,
+				9C5E137D22EFA5C9008EAEFF /* CameraFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9C5E137422EFA5C9008EAEFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5E137C22EFA5C9008EAEFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C89180222EFA33400806DE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +409,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9C5E137222EFA5C9008EAEFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C5E137A22EFA5C9008EAEFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C5E138622EFA5C9008EAEFF /* CameraFrameworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C89180022EFA33400806DE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +452,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9C5E138122EFA5C9008EAEFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C5E137522EFA5C9008EAEFF /* CameraFramework */;
+			targetProxy = 9C5E138022EFA5C9008EAEFF /* PBXContainerItemProxy */;
+		};
+		9C5E138322EFA5C9008EAEFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C89180322EFA33400806DE5 /* ImageProcessingSample */;
+			targetProxy = 9C5E138222EFA5C9008EAEFF /* PBXContainerItemProxy */;
+		};
+		9C5E138A22EFA5C9008EAEFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C5E137522EFA5C9008EAEFF /* CameraFramework */;
+			targetProxy = 9C5E138922EFA5C9008EAEFF /* PBXContainerItemProxy */;
+		};
 		9C89181A22EFA33500806DE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9C89180322EFA33400806DE5 /* ImageProcessingSample */;
@@ -312,6 +499,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9C5E138D22EFA5C9008EAEFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CameraFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.CameraFramework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C5E138E22EFA5C9008EAEFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CameraFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.CameraFramework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9C5E138F22EFA5C9008EAEFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				INFOPLIST_FILE = CameraFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.CameraFrameworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageProcessingSample.app/ImageProcessingSample";
+			};
+			name = Debug;
+		};
+		9C5E139022EFA5C9008EAEFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				INFOPLIST_FILE = CameraFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.CameraFrameworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageProcessingSample.app/ImageProcessingSample";
+			};
+			name = Release;
+		};
 		9C89182A22EFA33500806DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -549,6 +832,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9C5E139122EFA5C9008EAEFF /* Build configuration list for PBXNativeTarget "CameraFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5E138D22EFA5C9008EAEFF /* Debug */,
+				9C5E138E22EFA5C9008EAEFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C5E139322EFA5C9008EAEFF /* Build configuration list for PBXNativeTarget "CameraFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C5E138F22EFA5C9008EAEFF /* Debug */,
+				9C5E139022EFA5C9008EAEFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9C8917FF22EFA33400806DE5 /* Build configuration list for PBXProject "ImageProcessingSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
