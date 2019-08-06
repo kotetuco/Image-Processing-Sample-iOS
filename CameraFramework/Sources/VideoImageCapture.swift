@@ -43,23 +43,3 @@ extension VideoImageCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
 }
-
-open class VideoAuthenticator {
-    func requestVideoAccess() {
-        let status = AVCaptureDevice.authorizationStatus(for: .video)
-        switch status {
-        case .authorized:
-            break
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted {
-                    // TODO:
-                }
-            }
-        case .denied, .restricted:
-            break
-        @unknown default:
-            break
-        }
-    }
-}

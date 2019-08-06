@@ -10,8 +10,6 @@
 		4A78952922F930900096FBCD /* VideoImageCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78952822F930900096FBCD /* VideoImageCapture.swift */; };
 		4A78952E22F936EA0096FBCD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
 		4A78953022F936FA0096FBCD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952F22F936FA0096FBCD /* RxCocoa.framework */; };
-		4A78953322F9373C0096FBCD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
-		4A78953422F9373C0096FBCD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952F22F936FA0096FBCD /* RxCocoa.framework */; };
 		9C5E137F22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; };
 		9C5E138622EFA5C9008EAEFF /* CameraFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */; };
 		9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5E137822EFA5C9008EAEFF /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +22,9 @@
 		9C89181222EFA33500806DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */; };
 		9C89181D22EFA33500806DE5 /* ImageProcessingSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89181C22EFA33500806DE5 /* ImageProcessingSampleTests.swift */; };
 		9C89182822EFA33500806DE5 /* ImageProcessingSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89182722EFA33500806DE5 /* ImageProcessingSampleUITests.swift */; };
+		9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */; };
+		9C9E28A922F9E9AE007D4DE0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
+		9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		9C89182322EFA33500806DE5 /* ImageProcessingSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageProcessingSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C89182722EFA33500806DE5 /* ImageProcessingSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingSampleUITests.swift; sourceTree = "<group>"; };
 		9C89182922EFA33500806DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAccess.swift; sourceTree = "<group>"; };
+		9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A78953322F9373C0096FBCD /* RxSwift.framework in Frameworks */,
-				4A78953422F9373C0096FBCD /* RxCocoa.framework in Frameworks */,
+				9C9E28A922F9E9AE007D4DE0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */,
 				4A78953022F936FA0096FBCD /* RxCocoa.framework in Frameworks */,
 				4A78952E22F936EA0096FBCD /* RxSwift.framework in Frameworks */,
 				9C5E138B22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */,
@@ -153,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4A78952822F930900096FBCD /* VideoImageCapture.swift */,
+				9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -160,6 +164,7 @@
 		4A78952C22F936EA0096FBCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */,
 				4A78953122F937090096FBCD /* RxTest.framework */,
 				4A78952F22F936FA0096FBCD /* RxCocoa.framework */,
 				4A78952D22F936EA0096FBCD /* RxSwift.framework */,
@@ -453,6 +458,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -470,6 +476,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -487,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A78952922F930900096FBCD /* VideoImageCapture.swift in Sources */,
+				9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
