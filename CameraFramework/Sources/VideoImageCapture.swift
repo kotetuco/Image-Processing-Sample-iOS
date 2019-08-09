@@ -7,7 +7,6 @@
 //
 
 import AVFoundation
-import RxSwift
 
 open class VideoImageCapture: NSObject {
     private let captureSession: AVCaptureSession

@@ -155,6 +155,7 @@
 		4A78952722F9307A0096FBCD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9C5E137822EFA5C9008EAEFF /* CameraFramework.h */,
 				4A78952822F930900096FBCD /* VideoImageCapture.swift */,
 				9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */,
 			);
@@ -172,11 +173,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A7F94BD22FCED6300612877 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
+				9C89180922EFA33400806DE5 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4A7F94BE22FCED7800612877 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C89180B22EFA33400806DE5 /* Main.storyboard */,
+				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
 			isa = PBXGroup;
 			children = (
 				4A78952722F9307A0096FBCD /* Sources */,
-				9C5E137822EFA5C9008EAEFF /* CameraFramework.h */,
 				9C5E137922EFA5C9008EAEFF /* Info.plist */,
 			);
 			path = CameraFramework;
@@ -219,11 +237,9 @@
 		9C89180622EFA33400806DE5 /* ImageProcessingSample */ = {
 			isa = PBXGroup;
 			children = (
-				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
-				9C89180922EFA33400806DE5 /* ViewController.swift */,
-				9C89180B22EFA33400806DE5 /* Main.storyboard */,
+				4A7F94BD22FCED6300612877 /* Sources */,
+				4A7F94BE22FCED7800612877 /* Storyboards */,
 				9C89180E22EFA33500806DE5 /* Assets.xcassets */,
-				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
 				9C89181322EFA33500806DE5 /* Info.plist */,
 			);
 			path = ImageProcessingSample;
