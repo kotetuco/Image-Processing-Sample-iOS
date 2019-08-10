@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-open class VideoImageCapture: NSObject {
+public final class VideoImageCapture: NSObject {
     private let captureSession: AVCaptureSession
     private let videoDataOutput: AVCaptureVideoDataOutput
     private let bufferQueue = DispatchQueue(label: "co.kotetu.buffer.queue")
@@ -22,12 +22,20 @@ open class VideoImageCapture: NSObject {
         self.videoDataOutput.setSampleBufferDelegate(self, queue: bufferQueue)
     }
 
-    func start() {
+    public func setupPreviewLayer(previewContainer: CALayer) {
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = previewContainer.bounds
+        previewLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        previewLayer.videoGravity = .resizeAspectFill
+        previewContainer.insertSublayer(previewLayer, at: 0)
+    }
+
+    public func start() {
         guard !captureSession.isRunning else { return }
         captureSession.startRunning()
     }
 
-    func stop() {
+    public func stop() {
         guard captureSession.isRunning else { return }
         captureSession.stopRunning()
     }
@@ -36,9 +44,6 @@ open class VideoImageCapture: NSObject {
 // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
 
 extension VideoImageCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
-    public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-    }
-
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
 }

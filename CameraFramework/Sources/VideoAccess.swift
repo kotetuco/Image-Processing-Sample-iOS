@@ -9,7 +9,7 @@
 import AVFoundation
 import RxSwift
 
-open class VideoAccess {
+public final class VideoAccess {
     public enum VideoAccessError: Error {
         case denied
         case general
@@ -31,10 +31,8 @@ open class VideoAccess {
                         completable(.error(VideoAccessError.denied))
                     }
                 })
-            case .denied:
+            case .denied, .restricted:
                 completable(.error(VideoAccessError.denied))
-            case .restricted:
-                completable(.error(VideoAccessError.general))
             @unknown default:
                 completable(.error(VideoAccessError.general))
             }

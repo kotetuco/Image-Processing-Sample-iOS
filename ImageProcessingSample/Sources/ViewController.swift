@@ -11,32 +11,48 @@ import CameraFramework
 import RxSwift
 
 class ViewController: UIViewController {
-    let disposeBag = DisposeBag()
+    @IBOutlet private weak var previewView: UIView!
+
+    private var videoCapture: VideoImageCapture?
+    private let videoAccess = VideoAccess()
+    private let disposeBag = DisposeBag()
+    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         requestVideoAccess()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        videoCapture?.stop()
+    }
+
     private func requestVideoAccess() {
-        let videoAccess = VideoAccess()
+        guard videoCapture == nil else { return }
         videoAccess
             .requestVideoAccess()
+            .subscribeOn(backgroundScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { completable in
+            .subscribe { [weak self] completable in
+                guard let self = self else { return }
                 switch completable {
                 case .completed:
-                    // TODO: start session
-                    #if DEBUG
-                    print("success")
-                    #endif
-                    break
+                    if let videoCapture = BasicVideoDataCaptureBuilder().build() {
+                        videoCapture.setupPreviewLayer(previewContainer: self.previewView.layer)
+                        videoCapture.start()
+                        self.videoCapture = videoCapture
+                    }
                 case .error(_):
-                    // TODO: alert
-                    #if DEBUG
-                    print("failure")
-                    #endif
-                    break
+                    let alert = UIAlertController(title: "エラー",
+                                                  message: "カメラのアクセスを許可してください。",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
             .disposed(by: disposeBag)

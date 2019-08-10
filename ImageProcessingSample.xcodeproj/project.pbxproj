@@ -25,6 +25,9 @@
 		9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */; };
 		9C9E28A922F9E9AE007D4DE0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
 		9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */; };
+		9C9E28AD22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */; };
+		9C9E28AF22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */; };
+		9C9E28B222FEB267007D4DE0 /* VideoDataCaptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		9C89182922EFA33500806DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAccess.swift; sourceTree = "<group>"; };
 		9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceBuilder.swift; sourceTree = "<group>"; };
+		9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoDataOutputBuilder.swift; sourceTree = "<group>"; };
+		9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataCaptureBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +162,11 @@
 			isa = PBXGroup;
 			children = (
 				9C5E137822EFA5C9008EAEFF /* CameraFramework.h */,
-				4A78952822F930900096FBCD /* VideoImageCapture.swift */,
+				9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */,
+				9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */,
 				9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */,
+				9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */,
+				4A78952822F930900096FBCD /* VideoImageCapture.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -511,8 +520,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9E28AF22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift in Sources */,
 				4A78952922F930900096FBCD /* VideoImageCapture.swift in Sources */,
+				9C9E28AD22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift in Sources */,
 				9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */,
+				9C9E28B222FEB267007D4DE0 /* VideoDataCaptureBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
