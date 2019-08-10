@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A78952922F930900096FBCD /* VideoImageCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78952822F930900096FBCD /* VideoImageCapture.swift */; };
+		4A78952E22F936EA0096FBCD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
+		4A78953022F936FA0096FBCD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952F22F936FA0096FBCD /* RxCocoa.framework */; };
 		9C5E137F22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; };
 		9C5E138622EFA5C9008EAEFF /* CameraFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */; };
 		9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5E137822EFA5C9008EAEFF /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,6 +22,12 @@
 		9C89181222EFA33500806DE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */; };
 		9C89181D22EFA33500806DE5 /* ImageProcessingSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89181C22EFA33500806DE5 /* ImageProcessingSampleTests.swift */; };
 		9C89182822EFA33500806DE5 /* ImageProcessingSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C89182722EFA33500806DE5 /* ImageProcessingSampleUITests.swift */; };
+		9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */; };
+		9C9E28A922F9E9AE007D4DE0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78952D22F936EA0096FBCD /* RxSwift.framework */; };
+		9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */; };
+		9C9E28AD22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */; };
+		9C9E28AF22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */; };
+		9C9E28B222FEB267007D4DE0 /* VideoDataCaptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A78952822F930900096FBCD /* VideoImageCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoImageCapture.swift; sourceTree = "<group>"; };
+		4A78952D22F936EA0096FBCD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		4A78952F22F936FA0096FBCD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		4A78953122F937090096FBCD /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5E137822EFA5C9008EAEFF /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
 		9C5E137922EFA5C9008EAEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +106,11 @@
 		9C89182322EFA33500806DE5 /* ImageProcessingSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageProcessingSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C89182722EFA33500806DE5 /* ImageProcessingSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingSampleUITests.swift; sourceTree = "<group>"; };
 		9C89182922EFA33500806DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAccess.swift; sourceTree = "<group>"; };
+		9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceBuilder.swift; sourceTree = "<group>"; };
+		9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoDataOutputBuilder.swift; sourceTree = "<group>"; };
+		9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataCaptureBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9E28A922F9E9AE007D4DE0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */,
+				4A78953022F936FA0096FBCD /* RxCocoa.framework in Frameworks */,
+				4A78952E22F936EA0096FBCD /* RxSwift.framework in Frameworks */,
 				9C5E138B22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,10 +158,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
+		4A78952722F9307A0096FBCD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				9C5E137822EFA5C9008EAEFF /* CameraFramework.h */,
+				9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */,
+				9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */,
+				9C9E28A722F9E6FC007D4DE0 /* VideoAccess.swift */,
+				9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */,
+				4A78952822F930900096FBCD /* VideoImageCapture.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4A78952C22F936EA0096FBCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */,
+				4A78953122F937090096FBCD /* RxTest.framework */,
+				4A78952F22F936FA0096FBCD /* RxCocoa.framework */,
+				4A78952D22F936EA0096FBCD /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A7F94BD22FCED6300612877 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
+				9C89180922EFA33400806DE5 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4A7F94BE22FCED7800612877 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9C89180B22EFA33400806DE5 /* Main.storyboard */,
+				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
+			isa = PBXGroup;
+			children = (
+				4A78952722F9307A0096FBCD /* Sources */,
 				9C5E137922EFA5C9008EAEFF /* Info.plist */,
 			);
 			path = CameraFramework;
@@ -163,6 +227,7 @@
 				9C5E137722EFA5C9008EAEFF /* CameraFramework */,
 				9C5E138422EFA5C9008EAEFF /* CameraFrameworkTests */,
 				9C89180522EFA33400806DE5 /* Products */,
+				4A78952C22F936EA0096FBCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,11 +246,9 @@
 		9C89180622EFA33400806DE5 /* ImageProcessingSample */ = {
 			isa = PBXGroup;
 			children = (
-				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
-				9C89180922EFA33400806DE5 /* ViewController.swift */,
-				9C89180B22EFA33400806DE5 /* Main.storyboard */,
+				4A7F94BD22FCED6300612877 /* Sources */,
+				4A7F94BE22FCED7800612877 /* Storyboards */,
 				9C89180E22EFA33500806DE5 /* Assets.xcassets */,
-				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
 				9C89181322EFA33500806DE5 /* Info.plist */,
 			);
 			path = ImageProcessingSample;
@@ -231,6 +294,7 @@
 				9C5E137222EFA5C9008EAEFF /* Sources */,
 				9C5E137322EFA5C9008EAEFF /* Frameworks */,
 				9C5E137422EFA5C9008EAEFF /* Resources */,
+				4A78952A22F936770096FBCD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,6 +332,7 @@
 				9C89180122EFA33400806DE5 /* Frameworks */,
 				9C89180222EFA33400806DE5 /* Resources */,
 				9C5E139222EFA5C9008EAEFF /* Embed Frameworks */,
+				4A78952B22F936920096FBCD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -327,6 +392,7 @@
 				TargetAttributes = {
 					9C5E137522EFA5C9008EAEFF = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					9C5E137D22EFA5C9008EAEFF = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -408,11 +474,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A78952A22F936770096FBCD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		4A78952B22F936920096FBCD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C5E137222EFA5C9008EAEFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9E28AF22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift in Sources */,
+				4A78952922F930900096FBCD /* VideoImageCapture.swift in Sources */,
+				9C9E28AD22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift in Sources */,
+				9C9E28A822F9E6FC007D4DE0 /* VideoAccess.swift in Sources */,
+				9C9E28B222FEB267007D4DE0 /* VideoDataCaptureBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +614,7 @@
 		9C5E138D22EFA5C9008EAEFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -510,6 +623,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CameraFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,6 +638,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -531,6 +649,7 @@
 		9C5E138E22EFA5C9008EAEFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -539,6 +658,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CameraFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -716,9 +839,14 @@
 		9C89182D22EFA33500806DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TXFV3DH636;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImageProcessingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,9 +863,14 @@
 		9C89182E22EFA33500806DE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImageProcessingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
