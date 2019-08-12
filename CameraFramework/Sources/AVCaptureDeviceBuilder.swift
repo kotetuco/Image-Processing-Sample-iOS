@@ -28,14 +28,6 @@ public final class BackTrueDepthVideoDeviceBuilder: AVCaptureDeviceBuilder {
     }
 }
 
-public final class DefaultFrontVideoDeviceBuilder: AVCaptureDeviceBuilder {
-    public init() {}
-
-    public func build() -> AVCaptureDevice? {
-        return AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)
-    }
-}
-
 public final class BestBackVideoDeviceBuilder: AVCaptureDeviceBuilder {
     public init() {}
 
@@ -44,6 +36,18 @@ public final class BestBackVideoDeviceBuilder: AVCaptureDeviceBuilder {
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes,
                                                                 mediaType: .video,
                                                                 position: .back)
+        return discoverySession.devices.first
+    }
+}
+
+public final class BestFrontVideoDeviceBuilder: AVCaptureDeviceBuilder {
+    public init() {}
+
+    public func build() -> AVCaptureDevice? {
+        let deviceTypes: [AVCaptureDevice.DeviceType] = [.builtInWideAngleCamera]
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes,
+                                                                mediaType: .video,
+                                                                position: .front)
         return discoverySession.devices.first
     }
 }
