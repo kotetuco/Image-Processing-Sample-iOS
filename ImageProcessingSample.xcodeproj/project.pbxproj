@@ -28,6 +28,12 @@
 		9C9E28AD22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */; };
 		9C9E28AF22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */; };
 		9C9E28B222FEB267007D4DE0 /* VideoDataCaptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */; };
+		9C9E28C122FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */; };
+		9C9E28C822FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E28C722FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift */; };
+		9C9E28CA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9E28BA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C9E28CD22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */; };
+		9C9E28CE22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CAFC13623011D8D0010D855 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAFC13523011D8D0010D855 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,27 @@
 			remoteGlobalIDString = 9C89180322EFA33400806DE5;
 			remoteInfo = ImageProcessingSample;
 		};
+		9C9E28C222FF379F007D4DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C9E28B722FF379F007D4DE0;
+			remoteInfo = OpneCVImageProcessingFramework;
+		};
+		9C9E28C422FF379F007D4DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C89180322EFA33400806DE5;
+			remoteInfo = ImageProcessingSample;
+		};
+		9C9E28CB22FF379F007D4DE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8917FC22EFA33400806DE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C9E28B722FF379F007D4DE0;
+			remoteInfo = OpneCVImageProcessingFramework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +103,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9C5E138C22EFA5C9008EAEFF /* CameraFramework.framework in Embed Frameworks */,
+				9C9E28CE22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +139,13 @@
 		9C9E28AC22FEA70F007D4DE0 /* AVCaptureDeviceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceBuilder.swift; sourceTree = "<group>"; };
 		9C9E28AE22FEAC37007D4DE0 /* AVCaptureVideoDataOutputBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoDataOutputBuilder.swift; sourceTree = "<group>"; };
 		9C9E28B122FEB267007D4DE0 /* VideoDataCaptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataCaptureBuilder.swift; sourceTree = "<group>"; };
+		9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpneCVImageProcessingFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9E28BA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpneCVImageProcessingFramework.h; sourceTree = "<group>"; };
+		9C9E28BB22FF379F007D4DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C9E28C022FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpneCVImageProcessingFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9E28C722FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpneCVImageProcessingFrameworkTests.swift; sourceTree = "<group>"; };
+		9C9E28C922FF379F007D4DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CAFC13523011D8D0010D855 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = OpenCV/opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +172,7 @@
 				9C9E28AB22F9EAA4007D4DE0 /* RxRelay.framework in Frameworks */,
 				4A78953022F936FA0096FBCD /* RxCocoa.framework in Frameworks */,
 				4A78952E22F936EA0096FBCD /* RxSwift.framework in Frameworks */,
+				9C9E28CD22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Frameworks */,
 				9C5E138B22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +188,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28B522FF379F007D4DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAFC13623011D8D0010D855 /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28BD22FF379F007D4DE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9E28C122FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +226,7 @@
 		4A78952C22F936EA0096FBCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CAFC13523011D8D0010D855 /* opencv2.framework */,
 				9C9E28AA22F9EAA4007D4DE0 /* RxRelay.framework */,
 				4A78953122F937090096FBCD /* RxTest.framework */,
 				4A78952F22F936FA0096FBCD /* RxCocoa.framework */,
@@ -226,6 +279,8 @@
 				9C89182622EFA33500806DE5 /* ImageProcessingSampleUITests */,
 				9C5E137722EFA5C9008EAEFF /* CameraFramework */,
 				9C5E138422EFA5C9008EAEFF /* CameraFrameworkTests */,
+				9C9E28B922FF379F007D4DE0 /* OpneCVImageProcessingFramework */,
+				9C9E28C622FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests */,
 				9C89180522EFA33400806DE5 /* Products */,
 				4A78952C22F936EA0096FBCD /* Frameworks */,
 			);
@@ -239,6 +294,8 @@
 				9C89182322EFA33500806DE5 /* ImageProcessingSampleUITests.xctest */,
 				9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */,
 				9C5E137E22EFA5C9008EAEFF /* CameraFrameworkTests.xctest */,
+				9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */,
+				9C9E28C022FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,6 +329,32 @@
 			path = ImageProcessingSampleUITests;
 			sourceTree = "<group>";
 		};
+		9C9E28B922FF379F007D4DE0 /* OpneCVImageProcessingFramework */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E28D522FF37AB007D4DE0 /* Sources */,
+				9C9E28BB22FF379F007D4DE0 /* Info.plist */,
+			);
+			path = OpneCVImageProcessingFramework;
+			sourceTree = "<group>";
+		};
+		9C9E28C622FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E28C722FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift */,
+				9C9E28C922FF379F007D4DE0 /* Info.plist */,
+			);
+			path = OpneCVImageProcessingFrameworkTests;
+			sourceTree = "<group>";
+		};
+		9C9E28D522FF37AB007D4DE0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E28BA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -280,6 +363,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28B322FF379F007D4DE0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9E28CA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +429,7 @@
 			);
 			dependencies = (
 				9C5E138A22EFA5C9008EAEFF /* PBXTargetDependency */,
+				9C9E28CC22FF379F007D4DE0 /* PBXTargetDependency */,
 			);
 			name = ImageProcessingSample;
 			productName = ImageProcessingSample;
@@ -380,13 +472,50 @@
 			productReference = 9C89182322EFA33500806DE5 /* ImageProcessingSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9C9E28B722FF379F007D4DE0 /* OpneCVImageProcessingFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C9E28CF22FF379F007D4DE0 /* Build configuration list for PBXNativeTarget "OpneCVImageProcessingFramework" */;
+			buildPhases = (
+				9C9E28B322FF379F007D4DE0 /* Headers */,
+				9C9E28B422FF379F007D4DE0 /* Sources */,
+				9C9E28B522FF379F007D4DE0 /* Frameworks */,
+				9C9E28B622FF379F007D4DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpneCVImageProcessingFramework;
+			productName = OpneCVImageProcessingFramework;
+			productReference = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C9E28BF22FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C9E28D222FF379F007D4DE0 /* Build configuration list for PBXNativeTarget "OpneCVImageProcessingFrameworkTests" */;
+			buildPhases = (
+				9C9E28BC22FF379F007D4DE0 /* Sources */,
+				9C9E28BD22FF379F007D4DE0 /* Frameworks */,
+				9C9E28BE22FF379F007D4DE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C9E28C322FF379F007D4DE0 /* PBXTargetDependency */,
+				9C9E28C522FF379F007D4DE0 /* PBXTargetDependency */,
+			);
+			name = OpneCVImageProcessingFrameworkTests;
+			productName = OpneCVImageProcessingFrameworkTests;
+			productReference = 9C9E28C022FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9C8917FC22EFA33400806DE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = kotetu;
 				TargetAttributes = {
@@ -409,6 +538,13 @@
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = 9C89180322EFA33400806DE5;
 					};
+					9C9E28B722FF379F007D4DE0 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					9C9E28BF22FF379F007D4DE0 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 9C89180322EFA33400806DE5;
+					};
 				};
 			};
 			buildConfigurationList = 9C8917FF22EFA33400806DE5 /* Build configuration list for PBXProject "ImageProcessingSample" */;
@@ -429,6 +565,8 @@
 				9C89182222EFA33500806DE5 /* ImageProcessingSampleUITests */,
 				9C5E137522EFA5C9008EAEFF /* CameraFramework */,
 				9C5E137D22EFA5C9008EAEFF /* CameraFrameworkTests */,
+				9C9E28B722FF379F007D4DE0 /* OpneCVImageProcessingFramework */,
+				9C9E28BF22FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -466,6 +604,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9C89182122EFA33500806DE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28B622FF379F007D4DE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28BE22FF379F007D4DE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -561,6 +713,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C9E28B422FF379F007D4DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9E28BC22FF379F007D4DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9E28C822FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -588,6 +755,21 @@
 			isa = PBXTargetDependency;
 			target = 9C89180322EFA33400806DE5 /* ImageProcessingSample */;
 			targetProxy = 9C89182422EFA33500806DE5 /* PBXContainerItemProxy */;
+		};
+		9C9E28C322FF379F007D4DE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C9E28B722FF379F007D4DE0 /* OpneCVImageProcessingFramework */;
+			targetProxy = 9C9E28C222FF379F007D4DE0 /* PBXContainerItemProxy */;
+		};
+		9C9E28C522FF379F007D4DE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C89180322EFA33400806DE5 /* ImageProcessingSample */;
+			targetProxy = 9C9E28C422FF379F007D4DE0 /* PBXContainerItemProxy */;
+		};
+		9C9E28CC22FF379F007D4DE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C9E28B722FF379F007D4DE0 /* OpneCVImageProcessingFramework */;
+			targetProxy = 9C9E28CB22FF379F007D4DE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -966,6 +1148,116 @@
 			};
 			name = Release;
 		};
+		9C9E28D022FF379F007D4DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCV",
+				);
+				INFOPLIST_FILE = OpneCVImageProcessingFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.OpneCVImageProcessingFramework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C9E28D122FF379F007D4DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenCV",
+				);
+				INFOPLIST_FILE = OpneCVImageProcessingFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.OpneCVImageProcessingFramework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9C9E28D322FF379F007D4DE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				INFOPLIST_FILE = OpneCVImageProcessingFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.OpneCVImageProcessingFrameworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageProcessingSample.app/ImageProcessingSample";
+			};
+			name = Debug;
+		};
+		9C9E28D422FF379F007D4DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TXFV3DH636;
+				INFOPLIST_FILE = OpneCVImageProcessingFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kotetu.app.sample.image-processing.OpneCVImageProcessingFrameworkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageProcessingSample.app/ImageProcessingSample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1019,6 +1311,24 @@
 			buildConfigurations = (
 				9C89183322EFA33500806DE5 /* Debug */,
 				9C89183422EFA33500806DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C9E28CF22FF379F007D4DE0 /* Build configuration list for PBXNativeTarget "OpneCVImageProcessingFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C9E28D022FF379F007D4DE0 /* Debug */,
+				9C9E28D122FF379F007D4DE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C9E28D222FF379F007D4DE0 /* Build configuration list for PBXNativeTarget "OpneCVImageProcessingFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C9E28D322FF379F007D4DE0 /* Debug */,
+				9C9E28D422FF379F007D4DE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

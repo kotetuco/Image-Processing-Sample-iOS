@@ -8,6 +8,7 @@
 
 import UIKit
 import CameraFramework
+import OpneCVImageProcessingFramework
 import RxSwift
 
 class ViewController: UIViewController {
