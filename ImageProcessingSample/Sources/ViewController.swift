@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     private var videoCapture: VideoImageCapture?
     private let videoAccess = VideoAccess()
+    private let imageProcessor = OpenCVImageProcessor()
     private let disposeBag = DisposeBag()
     private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
 

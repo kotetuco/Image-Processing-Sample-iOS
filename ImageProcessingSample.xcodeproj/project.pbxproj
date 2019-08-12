@@ -34,6 +34,11 @@
 		9C9E28CD22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */; };
 		9C9E28CE22FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E28B822FF379F007D4DE0 /* OpneCVImageProcessingFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CAFC13623011D8D0010D855 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAFC13523011D8D0010D855 /* opencv2.framework */; };
+		9CAFC13D230129E00010D855 /* OpenCVDriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CAFC13B230129E00010D855 /* OpenCVDriver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CAFC13E230129E00010D855 /* OpenCVDriver.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFC13C230129E00010D855 /* OpenCVDriver.mm */; };
+		9CAFC14023012E9C0010D855 /* OpenCVImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFC13F23012E9C0010D855 /* OpenCVImageProcessor.swift */; };
+		9CAFC144230157260010D855 /* CircleDetectionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CAFC142230157260010D855 /* CircleDetectionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CAFC145230157260010D855 /* CircleDetectionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFC143230157260010D855 /* CircleDetectionResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +151,11 @@
 		9C9E28C722FF379F007D4DE0 /* OpneCVImageProcessingFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpneCVImageProcessingFrameworkTests.swift; sourceTree = "<group>"; };
 		9C9E28C922FF379F007D4DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CAFC13523011D8D0010D855 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = OpenCV/opencv2.framework; sourceTree = "<group>"; };
+		9CAFC13B230129E00010D855 /* OpenCVDriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVDriver.h; sourceTree = "<group>"; };
+		9CAFC13C230129E00010D855 /* OpenCVDriver.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVDriver.mm; sourceTree = "<group>"; };
+		9CAFC13F23012E9C0010D855 /* OpenCVImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVImageProcessor.swift; sourceTree = "<group>"; };
+		9CAFC142230157260010D855 /* CircleDetectionResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleDetectionResult.h; sourceTree = "<group>"; };
+		9CAFC143230157260010D855 /* CircleDetectionResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleDetectionResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,8 +361,21 @@
 			isa = PBXGroup;
 			children = (
 				9C9E28BA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h */,
+				9CAFC13F23012E9C0010D855 /* OpenCVImageProcessor.swift */,
+				9CAFC14123014F460010D855 /* Driver */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		9CAFC14123014F460010D855 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				9CAFC13B230129E00010D855 /* OpenCVDriver.h */,
+				9CAFC13C230129E00010D855 /* OpenCVDriver.mm */,
+				9CAFC142230157260010D855 /* CircleDetectionResult.h */,
+				9CAFC143230157260010D855 /* CircleDetectionResult.m */,
+			);
+			path = Driver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9E28CA22FF379F007D4DE0 /* OpneCVImageProcessingFramework.h in Headers */,
+				9CAFC13D230129E00010D855 /* OpenCVDriver.h in Headers */,
+				9CAFC144230157260010D855 /* CircleDetectionResult.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +565,7 @@
 					};
 					9C9E28B722FF379F007D4DE0 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					9C9E28BF22FF379F007D4DE0 = {
 						CreatedOnToolsVersion = 10.3;
@@ -717,6 +743,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CAFC14023012E9C0010D855 /* OpenCVImageProcessor.swift in Sources */,
+				9CAFC13E230129E00010D855 /* OpenCVDriver.mm in Sources */,
+				9CAFC145230157260010D855 /* CircleDetectionResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +1180,7 @@
 		9C9E28D022FF379F007D4DE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1163,6 +1193,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenCV",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = OpneCVImageProcessingFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1174,6 +1205,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1184,6 +1216,7 @@
 		9C9E28D122FF379F007D4DE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1196,6 +1229,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenCV",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = OpneCVImageProcessingFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

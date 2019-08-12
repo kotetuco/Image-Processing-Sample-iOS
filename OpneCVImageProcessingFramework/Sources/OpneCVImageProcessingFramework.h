@@ -6,7 +6,8 @@
 //  Copyright © 2019 kotetu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import<OpneCVImageProcessingFramework/OpenCVDriver.h>
+#import<OpneCVImageProcessingFramework/CircleDetectionResult.h>
 
 //! Project version number for OpneCVImageProcessingFramework.
 FOUNDATION_EXPORT double OpneCVImageProcessingFrameworkVersionNumber;
@@ -15,5 +16,3 @@ FOUNDATION_EXPORT double OpneCVImageProcessingFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char OpneCVImageProcessingFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <OpneCVImageProcessingFramework/PublicHeader.h>
-
-
