@@ -26,15 +26,34 @@ public final class BasicVideoDataCaptureBuilder: VideoDataCaptureBuilder {
         let captureSession = AVCaptureSession()
 
         //
-        // AVCaptureDevice, AVCaptureDeviceInput
+        // AVCaptureDevice
         //
-        guard
-            let device = deviceBuilder.build(),
-            let deviceInput = try? AVCaptureDeviceInput(device: device),
-            captureSession.canAddInput(deviceInput)
-            else {
+        guard let device = deviceBuilder.build() else {
                 return nil
         }
+
+        do {
+            try device.lockForConfiguration()
+        } catch {
+            return nil
+        }
+
+        // 撮影対象までの距離が近い場合はautoFocusRangeRestrictionの設定を行うことで最適化できる場合がある
+        if device.isAutoFocusRangeRestrictionSupported {
+            device.autoFocusRangeRestriction = .near
+        }
+
+        device.unlockForConfiguration()
+
+        //
+        // AVCaptureDeviceInput
+        //
+        guard
+            let deviceInput = try? AVCaptureDeviceInput(device: device),
+            captureSession.canAddInput(deviceInput) else {
+                return nil
+        }
+
         captureSession.addInput(deviceInput)
 
         //
@@ -48,6 +67,7 @@ public final class BasicVideoDataCaptureBuilder: VideoDataCaptureBuilder {
         // AVCaptureConnection
         //
         if let connection = videoDataOutput.connection(with: .video) {
+            // フロントカメラの場合に左右反転させる
             switch device.position {
             case .front:
                 connection.isVideoMirrored = true
@@ -57,6 +77,11 @@ public final class BasicVideoDataCaptureBuilder: VideoDataCaptureBuilder {
                 break
             @unknown default:
                 break
+            }
+
+            // 手ブレ補正
+            if connection.isVideoStabilizationSupported {
+                connection.preferredVideoStabilizationMode = .auto
             }
         }
 
