@@ -6,57 +6,56 @@
 //  Copyright © 2019 kotetu. All rights reserved.
 //
 
-import UIKit
 import CameraFramework
 import OpneCVImageProcessingFramework
-import RxSwift
 
-class ViewController: UIViewController {
-    @IBOutlet private weak var previewView: UIView!
+final class ViewController: UIViewController {
+    @IBOutlet private weak var cameraPreview: UIView!
+    @IBOutlet weak var resizedPreview: UIImageView!
 
-    private var videoCapture: VideoImageCapture?
-    private let videoAccess = VideoAccess()
-    private let imageProcessor = OpenCVImageProcessor()
-    private let disposeBag = DisposeBag()
-    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+    private let presenter = Presenter(imageProcessor: OpenCVImageProcessor(),
+                                      videoAccess: VideoAccess())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestVideoAccess()
+        presenter.initializePreview()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        videoCapture?.stop()
+        presenter.terminate()
+    }
+}
+
+extension ViewController: PresenterDelegate {
+    func showAccessDeniedError() {
+        let alert = UIAlertController(title: "エラー",
+                                      message: "カメラのアクセスを許可してください。",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
-    private func requestVideoAccess() {
-        guard videoCapture == nil else { return }
-        videoAccess
-            .requestVideoAccess()
-            .subscribeOn(backgroundScheduler)
-            .observeOn(MainScheduler.instance)
-            .subscribe { [weak self] completable in
-                guard let self = self else { return }
-                switch completable {
-                case .completed:
-                    if let videoCapture = BasicVideoDataCaptureBuilder().build() {
-                        videoCapture.setupPreviewLayer(previewContainer: self.previewView.layer)
-                        videoCapture.start()
-                        self.videoCapture = videoCapture
-                    }
-                case .error(_):
-                    let alert = UIAlertController(title: "エラー",
-                                                  message: "カメラのアクセスを許可してください。",
-                                                  preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-            .disposed(by: disposeBag)
+    func showCameraInitializationError() {
+        let alert = UIAlertController(title: "エラー",
+                                      message: "カメラの初期化に失敗しました。",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func initializationDidSuccess() {
+        presenter.startPreview(with: cameraPreview.layer)
+    }
+
+    func didCapture(_ image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.resizedPreview.image = image
+        }
     }
 }

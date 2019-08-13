@@ -17,22 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-A5-6t4" userLabel="Preview">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-A5-6t4" userLabel="Camera Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y">
+                                <rect key="frame" x="207" y="414" width="207" height="448"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4fK-a6-zHK"/>
                             <constraint firstAttribute="trailing" secondItem="Rdy-A5-6t4" secondAttribute="trailing" id="6WY-hm-Bwm"/>
+                            <constraint firstItem="v7v-RC-Q6Y" firstAttribute="height" secondItem="Rdy-A5-6t4" secondAttribute="height" multiplier="1:2" id="B0A-HF-PUy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v7v-RC-Q6Y" secondAttribute="bottom" id="F1V-Kq-JMo"/>
                             <constraint firstAttribute="bottom" secondItem="Rdy-A5-6t4" secondAttribute="bottom" id="eVL-5f-UBP"/>
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m4G-vl-a53"/>
+                            <constraint firstAttribute="trailing" secondItem="v7v-RC-Q6Y" secondAttribute="trailing" id="po1-pb-XFa"/>
+                            <constraint firstItem="v7v-RC-Q6Y" firstAttribute="width" secondItem="Rdy-A5-6t4" secondAttribute="width" multiplier="1:2" id="x6p-Fu-fyH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="previewView" destination="Rdy-A5-6t4" id="t50-3L-pKK"/>
+                        <outlet property="cameraPreview" destination="Rdy-A5-6t4" id="nb0-tl-uA4"/>
+                        <outlet property="resizedPreview" destination="v7v-RC-Q6Y" id="qwE-ZT-5yL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

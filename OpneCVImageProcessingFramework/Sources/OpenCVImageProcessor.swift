@@ -12,13 +12,11 @@ public struct Circle {
 }
 
 public protocol ImageProcessor {
-    associatedtype Image
-    func circleDetection(from image: Image, minimumDistance: Double) -> [Circle]
+    /// 将来的に、OpenCV以外でも使えるInterfaceにするために、UIImageではない抽象的な画像型を使うようにする
+    func circleDetection(from image: UIImage, minimumDistance: Double) -> [Circle]
 }
 
 public final class OpenCVImageProcessor: ImageProcessor {
-    public typealias Image = UIImage
-
     let driver: OpenCVDriver
 
     public init(driver: OpenCVDriver = OpenCVDriver()) {
