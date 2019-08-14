@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float centerY;
 @property (nonatomic) float radius;
 
-- (instancetype)initWithCenterX:(float)centerX centerY:(float)centerY radius:(float)radius;
+- (nullable instancetype)initWithCenterX:(float)centerX centerY:(float)centerY radius:(float)radius;
 @end
 
 NS_ASSUME_NONNULL_END

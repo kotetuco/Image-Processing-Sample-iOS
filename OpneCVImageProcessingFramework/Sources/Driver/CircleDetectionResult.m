@@ -10,7 +10,7 @@
 
 @implementation CircleDetectionResult
 
-- (instancetype)initWithCenterX:(float)centerX centerY:(float)centerY radius:(float)radius
+- (nullable instancetype)initWithCenterX:(float)centerX centerY:(float)centerY radius:(float)radius
 {
     self = [super init];
     if (self) {

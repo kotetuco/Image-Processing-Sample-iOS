@@ -11,7 +11,8 @@ import OpneCVImageProcessingFramework
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var cameraPreview: UIView!
-    @IBOutlet weak var resizedPreview: UIImageView!
+    @IBOutlet weak var detectCirclePreview: UIView!
+    @IBOutlet weak var debugImagePreview: UIImageView!
 
     private let presenter = Presenter(imageProcessor: OpenCVImageProcessor(),
                                       videoAccess: VideoAccess())
@@ -53,9 +54,30 @@ extension ViewController: PresenterDelegate {
         presenter.startPreview(with: cameraPreview.layer)
     }
 
-    func didCapture(_ image: UIImage) {
+    func draw(circles: [Circle]) {
         DispatchQueue.main.async { [weak self] in
-            self?.resizedPreview.image = image
+            guard let self = self else { return }
+            self.detectCirclePreview.layer.sublayers = nil
+            circles.forEach({ circle in
+                let shapeLayer = CAShapeLayer()
+                let path = CGMutablePath()
+                path.addArc(center: circle.center,
+                            radius: circle.radius,
+                            startAngle: 0,
+                            endAngle: CGFloat(Double.pi) * 2,
+                            clockwise: true)
+                shapeLayer.path = path
+                shapeLayer.strokeColor = UIColor.yellow.cgColor
+                shapeLayer.fillColor = nil
+                shapeLayer.lineWidth = 3.0
+                self.detectCirclePreview.layer.addSublayer(shapeLayer)
+            })
+        }
+    }
+
+    func draw(image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.debugImagePreview.image = image
         }
     }
 }

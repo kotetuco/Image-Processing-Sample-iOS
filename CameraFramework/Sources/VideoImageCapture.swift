@@ -30,9 +30,10 @@ public final class VideoImageCapture: NSObject {
 
     public func setPreviewLayer(_ layer: CALayer) {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        videoPreviewLayer.frame = layer.bounds
-        videoPreviewLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        // アスペクト比に合わせて左右を切り取る(上下は切り取らない)
         videoPreviewLayer.videoGravity = .resizeAspectFill
+//        videoPreviewLayer.videoGravity = .resizeAspect
+        videoPreviewLayer.frame = layer.bounds
         layer.insertSublayer(videoPreviewLayer, at: 0)
     }
 
@@ -50,8 +51,6 @@ public final class VideoImageCapture: NSObject {
         captureSession.stopRunning()
     }
 }
-
-// MARK: AVCaptureVideoDataOutputSampleBufferDelegate
 
 extension VideoImageCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {

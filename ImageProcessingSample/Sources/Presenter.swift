@@ -14,7 +14,8 @@ protocol PresenterDelegate: AnyObject {
     func showAccessDeniedError()
     func showCameraInitializationError()
     func initializationDidSuccess()
-    func didCapture(_ image: UIImage)
+    func draw(circles: [Circle])
+    func draw(image: UIImage)
 }
 
 final class Presenter {
@@ -86,10 +87,43 @@ final class Presenter {
 
 extension Presenter: VideoImageCaptureDelegate {
     func didOutput(_ image: CIImage) {
-        // UIImage -> CGImage -> UIImage
-        if let cgImage = self.context.createCGImage(image, from: image.extent) {
-            let uiImage = UIImage(cgImage: cgImage)
-            delegate?.didCapture(uiImage)
+        guard let previewSize = previewSize,
+            let uiImage = uiImage(from: image) else { return }
+        // FIXME: プレビューViewと同じアスペクト比にする(左右はみ出た分についてはクロップするか座標計算に反映させる)
+        delegate?.draw(image: uiImage)
+        let detectCircles = self.imageProcessor.circleDetection(from: uiImage,
+                                                                minimumDistance: 30)
+        let drawScale: CGFloat = previewSize.height / image.extent.height
+        let drawableCircles = detectCircles.compactMap {
+            return Circle(center: CGPoint(x: $0.center.x * drawScale,
+                                          y: $0.center.y * drawScale),
+                          radius: $0.radius * drawScale )
+        }
+        delegate?.draw(circles: drawableCircles)
+    }
+}
+
+private extension Presenter {
+    func uiImage(from image: CIImage) -> UIImage? {
+        return autoreleasepool { [weak self] in
+            // UIImage -> CGImage -> UIImage
+            guard let self = self,
+                let cgImage = self.context.createCGImage(image, from: image.extent) else {
+                    return nil
+            }
+            return UIImage(cgImage: cgImage)
+        }
+    }
+
+    func uiImage(from image: CIImage, scale: CGFloat) -> UIImage? {
+        return autoreleasepool { [weak self] in
+            // UIImage -> CGImage -> UIImage
+            guard let self = self,
+                let outputImage = image.resize(scale: scale),
+                let cgImage = self.context.createCGImage(outputImage, from: outputImage.extent) else {
+                    return nil
+            }
+            return UIImage(cgImage: cgImage)
         }
     }
 }

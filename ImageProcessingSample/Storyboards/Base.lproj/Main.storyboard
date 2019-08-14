@@ -21,15 +21,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-A6-Nwg" userLabel="Detect Circle Preview">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y" userLabel="Debug Image Preview">
                                 <rect key="frame" x="207" y="414" width="207" height="448"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZuE-A6-Nwg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Pd-im-K7e"/>
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4fK-a6-zHK"/>
                             <constraint firstAttribute="trailing" secondItem="Rdy-A5-6t4" secondAttribute="trailing" id="6WY-hm-Bwm"/>
+                            <constraint firstItem="ZuE-A6-Nwg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8e5-4G-rSf"/>
                             <constraint firstItem="v7v-RC-Q6Y" firstAttribute="height" secondItem="Rdy-A5-6t4" secondAttribute="height" multiplier="1:2" id="B0A-HF-PUy"/>
+                            <constraint firstAttribute="bottom" secondItem="ZuE-A6-Nwg" secondAttribute="bottom" id="ClK-vn-Qca"/>
+                            <constraint firstAttribute="trailing" secondItem="ZuE-A6-Nwg" secondAttribute="trailing" id="E4b-5u-2N9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v7v-RC-Q6Y" secondAttribute="bottom" id="F1V-Kq-JMo"/>
                             <constraint firstAttribute="bottom" secondItem="Rdy-A5-6t4" secondAttribute="bottom" id="eVL-5f-UBP"/>
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m4G-vl-a53"/>
@@ -40,7 +47,8 @@
                     </view>
                     <connections>
                         <outlet property="cameraPreview" destination="Rdy-A5-6t4" id="nb0-tl-uA4"/>
-                        <outlet property="resizedPreview" destination="v7v-RC-Q6Y" id="qwE-ZT-5yL"/>
+                        <outlet property="debugImagePreview" destination="v7v-RC-Q6Y" id="qjl-82-OGg"/>
+                        <outlet property="detectCirclePreview" destination="ZuE-A6-Nwg" id="cPl-Hb-RBX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
