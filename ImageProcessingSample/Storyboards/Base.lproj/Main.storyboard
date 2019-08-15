@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-A6-Nwg" userLabel="Detect Circle Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y" userLabel="Debug Image Preview">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y" userLabel="Debug Image Preview">
                                 <rect key="frame" x="207" y="414" width="207" height="448"/>
                             </imageView>
                         </subviews>

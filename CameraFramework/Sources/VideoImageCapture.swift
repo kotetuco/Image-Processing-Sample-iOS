@@ -32,7 +32,6 @@ public final class VideoImageCapture: NSObject {
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         // アスペクト比に合わせて左右を切り取る(上下は切り取らない)
         videoPreviewLayer.videoGravity = .resizeAspectFill
-//        videoPreviewLayer.videoGravity = .resizeAspect
         videoPreviewLayer.frame = layer.bounds
         layer.insertSublayer(videoPreviewLayer, at: 0)
     }

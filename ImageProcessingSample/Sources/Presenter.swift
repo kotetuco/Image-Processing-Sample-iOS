@@ -87,17 +87,21 @@ final class Presenter {
 
 extension Presenter: VideoImageCaptureDelegate {
     func didOutput(_ image: CIImage) {
-        guard let previewSize = previewSize,
-            let uiImage = uiImage(from: image) else { return }
-        // FIXME: プレビューViewと同じアスペクト比にする(左右はみ出た分についてはクロップするか座標計算に反映させる)
-        delegate?.draw(image: uiImage)
-        let detectCircles = self.imageProcessor.circleDetection(from: uiImage,
-                                                                minimumDistance: 30)
+        guard let previewSize = previewSize, let uiImage = uiImage(from: image) else { return }
+
+        let aspectRatioForPreview = (previewSize.width / previewSize.height)
+        // プレビュー表示されない領域幅の片側オフセット値(原寸大画像ベースで算出)
+        // AVCaptureVideoPreviewLayerでvideoGravityをresizeAspectFillにした場合、縦については全て表示され
+        // 左右は切り取られるように表示調整されることから、非表示領域内にある原点を考慮しこのような実装となっている
+        let offsetX: CGFloat = (uiImage.size.width - (uiImage.size.height * aspectRatioForPreview)) / 2
+        let detectCircles = self.imageProcessor.circleDetection(from: uiImage, minimumDistance: 30)
         let drawScale: CGFloat = previewSize.height / image.extent.height
-        let drawableCircles = detectCircles.compactMap {
-            return Circle(center: CGPoint(x: $0.center.x * drawScale,
-                                          y: $0.center.y * drawScale),
-                          radius: $0.radius * drawScale )
+        // offsetXを表示スクリーン換算で算出
+        let offsetForDrawScaleX = offsetX * drawScale
+        let drawableCircles = detectCircles.compactMap { circle -> Circle in
+            let center = CGPoint(x: (circle.center.x * drawScale) - offsetForDrawScaleX,
+                                 y: circle.center.y * drawScale)
+            return Circle(center: center, radius: circle.radius * drawScale )
         }
         delegate?.draw(circles: drawableCircles)
     }
