@@ -6,55 +6,78 @@
 //  Copyright © 2019 kotetu. All rights reserved.
 //
 
-import UIKit
 import CameraFramework
-import RxSwift
+import OpneCVImageProcessingFramework
 
-class ViewController: UIViewController {
-    @IBOutlet private weak var previewView: UIView!
+final class ViewController: UIViewController {
+    @IBOutlet private weak var cameraPreview: UIView!
+    @IBOutlet weak var detectCirclePreview: UIView!
+    @IBOutlet weak var debugImagePreview: UIImageView!
 
-    private var videoCapture: VideoImageCapture?
-    private let videoAccess = VideoAccess()
-    private let disposeBag = DisposeBag()
-    private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+    private let presenter = Presenter(imageProcessor: OpenCVImageProcessor(),
+                                      videoAccess: VideoAccess())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestVideoAccess()
+        presenter.initializePreview()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        videoCapture?.stop()
+        presenter.terminate()
+    }
+}
+
+extension ViewController: PresenterDelegate {
+    func showAccessDeniedError() {
+        let alert = UIAlertController(title: "エラー",
+                                      message: "カメラのアクセスを許可してください。",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
-    private func requestVideoAccess() {
-        guard videoCapture == nil else { return }
-        videoAccess
-            .requestVideoAccess()
-            .subscribeOn(backgroundScheduler)
-            .observeOn(MainScheduler.instance)
-            .subscribe { [weak self] completable in
-                guard let self = self else { return }
-                switch completable {
-                case .completed:
-                    if let videoCapture = BasicVideoDataCaptureBuilder().build() {
-                        videoCapture.setupPreviewLayer(previewContainer: self.previewView.layer)
-                        videoCapture.start()
-                        self.videoCapture = videoCapture
-                    }
-                case .error(_):
-                    let alert = UIAlertController(title: "エラー",
-                                                  message: "カメラのアクセスを許可してください。",
-                                                  preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-            .disposed(by: disposeBag)
+    func showCameraInitializationError() {
+        let alert = UIAlertController(title: "エラー",
+                                      message: "カメラの初期化に失敗しました。",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func initializationDidSuccess() {
+        presenter.startPreview(with: cameraPreview.layer)
+    }
+
+    func draw(circles: [Circle]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.detectCirclePreview.layer.sublayers = nil
+            circles.forEach({ circle in
+                let shapeLayer = CAShapeLayer()
+                let path = CGMutablePath()
+                path.addArc(center: circle.center,
+                            radius: circle.radius,
+                            startAngle: 0,
+                            endAngle: CGFloat(Double.pi) * 2,
+                            clockwise: true)
+                shapeLayer.path = path
+                shapeLayer.strokeColor = UIColor.yellow.cgColor
+                shapeLayer.fillColor = nil
+                shapeLayer.lineWidth = 3.0
+                self.detectCirclePreview.layer.addSublayer(shapeLayer)
+            })
+        }
+    }
+
+    func draw(image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.debugImagePreview.image = image
+        }
     }
 }
