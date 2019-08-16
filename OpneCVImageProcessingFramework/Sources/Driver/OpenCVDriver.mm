@@ -31,7 +31,7 @@
     UIImageToMat(sourceImage, sourceMat, false);
 
     cv::cvtColor(sourceMat, sourceGrayScaleMat, cv::COLOR_BGR2GRAY);
-    // そのままの画像だとノイズが大きすぎて円が取れすぎるため、ブラー(ぼかし)を入れてノイズを減らす
+    // そのままの画像だとノイズが多すぎて円が取れすぎるため、ブラー(ぼかし)を入れてノイズを減らす
     cv::GaussianBlur(sourceGrayScaleMat, gaussianBlurMat, cv::Size(9, 9), 2, 2);
     cv::HoughCircles(gaussianBlurMat, circles, cv::HOUGH_GRADIENT, 1, minDistance);
 
