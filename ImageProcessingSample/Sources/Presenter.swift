@@ -15,7 +15,7 @@ protocol PresenterDelegate: AnyObject {
     func showCameraInitializationError()
     func initializationDidSuccess()
     func draw(circles: [Circle])
-    func draw(image: UIImage)
+    func draw(image: CIImage)
 }
 
 final class Presenter {
@@ -24,9 +24,11 @@ final class Presenter {
 
     private let disposeBag = DisposeBag()
     private let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
+    private let circleDetectionQueue = DispatchQueue(label: "co.kotetu.circle.detection.queue", qos: .utility)
     private var videoCapture: VideoImageCapture?
     private var previewSize: CGSize?
     private let context = CIContext()
+    private var isProcessing: Bool = false
 
     weak var delegate: PresenterDelegate?
 
@@ -83,12 +85,10 @@ final class Presenter {
         guard let videoCapture = videoCapture else { return }
         videoCapture.stop()
     }
-}
 
-extension Presenter: VideoImageCaptureDelegate {
-    func didOutput(_ image: CIImage) {
+    private func circleDetection(_ image: CIImage) {
+        isProcessing = true
         guard let previewSize = previewSize, let uiImage = uiImage(from: image) else { return }
-
         let aspectRatioForPreview = (previewSize.width / previewSize.height)
         // プレビュー表示されない領域幅の片側オフセット値(原寸大画像ベースで算出)
         // AVCaptureVideoPreviewLayerでvideoGravityをresizeAspectFillにした場合、縦については全て表示され
@@ -104,6 +104,18 @@ extension Presenter: VideoImageCaptureDelegate {
             return Circle(center: center, radius: circle.radius * drawScale )
         }
         delegate?.draw(circles: drawableCircles)
+        isProcessing = false
+    }
+}
+
+extension Presenter: VideoImageCaptureDelegate {
+    func didOutput(_ image: CIImage) {
+        delegate?.draw(image: image)
+        if !isProcessing {
+            circleDetectionQueue.async { [weak self] in
+                self?.circleDetection(image)
+            }
+        }
     }
 }
 

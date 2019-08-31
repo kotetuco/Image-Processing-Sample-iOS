@@ -48,18 +48,4 @@
 
     return circleDetectionResults;
 }
-
-#ifdef DEBUG
-- (NSString*)getDateString:(NSDate*)date
-{
-    // 日付フォーマットオブジェクトの生成
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    // フォーマットを指定の日付フォーマットに設定
-    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss.SSS"];
-    // 日付の文字列を生成
-    NSString *dateString = [dateFormatter stringFromDate:date];
-
-    return dateString;
-}
-#endif
 @end

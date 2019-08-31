@@ -12,7 +12,11 @@ import OpneCVImageProcessingFramework
 final class ViewController: UIViewController {
     @IBOutlet private weak var cameraPreview: UIView!
     @IBOutlet weak var detectCirclePreview: UIView!
-    @IBOutlet weak var debugImagePreview: UIImageView!
+    @IBOutlet weak var glkPreview: GLVideoPreview!
+    @IBOutlet weak var mtkPreview: MetalVideoPreview!
+
+    /// CIImageの描画先Viewを指定する(GLVideoPreview or MetalVideoPreview)
+    private var drawView: CIImageDrawable!
 
     private let presenter = Presenter(imageProcessor: OpenCVImageProcessor(),
                                       videoAccess: VideoAccess())
@@ -20,6 +24,10 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.delegate = self
+
+        // CIImageの描画については下記設定を変更する
+        drawView = mtkPreview
+        drawView.isHidden = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,9 +83,7 @@ extension ViewController: PresenterDelegate {
         }
     }
 
-    func draw(image: UIImage) {
-        DispatchQueue.main.async { [weak self] in
-            self?.debugImagePreview.image = image
-        }
+    func draw(image: CIImage) {
+        drawView.draw(image: image)
     }
 }

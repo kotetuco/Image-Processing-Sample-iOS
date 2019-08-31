@@ -24,9 +24,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-A6-Nwg" userLabel="Detect Circle Preview">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
-                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7v-RC-Q6Y" userLabel="Debug Image Preview">
-                                <rect key="frame" x="207" y="414" width="207" height="448"/>
-                            </imageView>
+                            <glkView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-Eb-mNw" userLabel="GLKView" customClass="GLVideoPreview" customModule="ImageProcessingSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </glkView>
+                            <mtkView hidden="YES" alpha="0.5" contentMode="scaleAspectFit" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-M5-KMI" customClass="MetalVideoPreview" customModule="ImageProcessingSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mtkView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -34,21 +37,26 @@
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4fK-a6-zHK"/>
                             <constraint firstAttribute="trailing" secondItem="Rdy-A5-6t4" secondAttribute="trailing" id="6WY-hm-Bwm"/>
                             <constraint firstItem="ZuE-A6-Nwg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8e5-4G-rSf"/>
-                            <constraint firstItem="v7v-RC-Q6Y" firstAttribute="height" secondItem="Rdy-A5-6t4" secondAttribute="height" multiplier="1:2" id="B0A-HF-PUy"/>
+                            <constraint firstAttribute="trailing" secondItem="jMb-M5-KMI" secondAttribute="trailing" id="AfR-ST-e6r"/>
                             <constraint firstAttribute="bottom" secondItem="ZuE-A6-Nwg" secondAttribute="bottom" id="ClK-vn-Qca"/>
                             <constraint firstAttribute="trailing" secondItem="ZuE-A6-Nwg" secondAttribute="trailing" id="E4b-5u-2N9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v7v-RC-Q6Y" secondAttribute="bottom" id="F1V-Kq-JMo"/>
+                            <constraint firstItem="mgg-Eb-mNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GWt-Kf-pWZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mgg-Eb-mNw" secondAttribute="trailing" id="MVC-PL-Mcz"/>
+                            <constraint firstItem="jMb-M5-KMI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VbY-tJ-Uyu"/>
                             <constraint firstAttribute="bottom" secondItem="Rdy-A5-6t4" secondAttribute="bottom" id="eVL-5f-UBP"/>
+                            <constraint firstItem="mgg-Eb-mNw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lkP-Mh-wb8"/>
                             <constraint firstItem="Rdy-A5-6t4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m4G-vl-a53"/>
-                            <constraint firstAttribute="trailing" secondItem="v7v-RC-Q6Y" secondAttribute="trailing" id="po1-pb-XFa"/>
-                            <constraint firstItem="v7v-RC-Q6Y" firstAttribute="width" secondItem="Rdy-A5-6t4" secondAttribute="width" multiplier="1:2" id="x6p-Fu-fyH"/>
+                            <constraint firstAttribute="bottom" secondItem="mgg-Eb-mNw" secondAttribute="bottom" id="nBD-TX-y1p"/>
+                            <constraint firstAttribute="bottom" secondItem="jMb-M5-KMI" secondAttribute="bottom" id="qed-HJ-3iH"/>
+                            <constraint firstItem="jMb-M5-KMI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tXm-Bb-xAy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cameraPreview" destination="Rdy-A5-6t4" id="nb0-tl-uA4"/>
-                        <outlet property="debugImagePreview" destination="v7v-RC-Q6Y" id="qjl-82-OGg"/>
                         <outlet property="detectCirclePreview" destination="ZuE-A6-Nwg" id="cPl-Hb-RBX"/>
+                        <outlet property="glkPreview" destination="mgg-Eb-mNw" id="fcb-UI-j8k"/>
+                        <outlet property="mtkPreview" destination="jMb-M5-KMI" id="Vdh-Us-5d0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
