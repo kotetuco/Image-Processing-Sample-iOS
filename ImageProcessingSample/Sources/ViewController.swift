@@ -83,7 +83,7 @@ extension ViewController: PresenterDelegate {
         }
     }
 
-    func draw(image: CIImage) {
-        drawView.draw(image: image)
+    func draw(ciImage: CIImage) {
+        drawView.draw(image: ciImage)
     }
 }
