@@ -9,7 +9,7 @@
 import AVFoundation
 
 public protocol VideoImageCaptureDelegate: AnyObject {
-    func didOutput(_ image: CIImage)
+    func didOutput(ciImage: CIImage)
 }
 
 public final class VideoImageCapture: NSObject {
@@ -55,6 +55,6 @@ extension VideoImageCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: imageBuffer)
-        videoImageCaptureDelegate?.didOutput(ciImage)
+        videoImageCaptureDelegate?.didOutput(ciImage: ciImage)
     }
 }

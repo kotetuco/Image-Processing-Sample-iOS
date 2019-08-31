@@ -13,6 +13,7 @@
 		4A89DD5E2316F308001BD672 /* GLVideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89DD5D2316F308001BD672 /* GLVideoPreview.swift */; };
 		4A89DD602316F365001BD672 /* MetalVideoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A89DD5F2316F365001BD672 /* MetalVideoPreview.swift */; };
 		4A9F2BA1231A797E002E153B /* CIImageDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F2BA0231A797E002E153B /* CIImageDrawable.swift */; };
+		4AC36CE2231A8F1B0006B590 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC36CE1231A8F1B0006B590 /* UIImage+Resize.swift */; };
 		9C5E137F22EFA5C9008EAEFF /* CameraFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */; };
 		9C5E138622EFA5C9008EAEFF /* CameraFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E138522EFA5C9008EAEFF /* CameraFrameworkTests.swift */; };
 		9C5E138822EFA5C9008EAEFF /* CameraFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5E137822EFA5C9008EAEFF /* CameraFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,6 +129,7 @@
 		4A89DD5D2316F308001BD672 /* GLVideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLVideoPreview.swift; sourceTree = "<group>"; };
 		4A89DD5F2316F365001BD672 /* MetalVideoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalVideoPreview.swift; sourceTree = "<group>"; };
 		4A9F2BA0231A797E002E153B /* CIImageDrawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageDrawable.swift; sourceTree = "<group>"; };
+		4AC36CE1231A8F1B0006B590 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		9C5E137622EFA5C9008EAEFF /* CameraFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5E137822EFA5C9008EAEFF /* CameraFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraFramework.h; sourceTree = "<group>"; };
 		9C5E137922EFA5C9008EAEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -259,12 +261,12 @@
 			isa = PBXGroup;
 			children = (
 				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
-				9CAFC14A2302F8A50010D855 /* CIImage+Resize.swift */,
 				4A9F2BA0231A797E002E153B /* CIImageDrawable.swift */,
 				4A89DD5D2316F308001BD672 /* GLVideoPreview.swift */,
 				4A89DD5F2316F365001BD672 /* MetalVideoPreview.swift */,
 				9CAFC146230163F00010D855 /* Presenter.swift */,
 				9C89180922EFA33400806DE5 /* ViewController.swift */,
+				4AC36CE3231ABDC50006B590 /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -276,6 +278,15 @@
 				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4AC36CE3231ABDC50006B590 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9CAFC14A2302F8A50010D855 /* CIImage+Resize.swift */,
+				4AC36CE1231A8F1B0006B590 /* UIImage+Resize.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
@@ -738,6 +749,7 @@
 				9C89180A22EFA33400806DE5 /* ViewController.swift in Sources */,
 				4A9F2BA1231A797E002E153B /* CIImageDrawable.swift in Sources */,
 				4A89DD5E2316F308001BD672 /* GLVideoPreview.swift in Sources */,
+				4AC36CE2231A8F1B0006B590 /* UIImage+Resize.swift in Sources */,
 				9CAFC14B2302F8A50010D855 /* CIImage+Resize.swift in Sources */,
 				9C89180822EFA33400806DE5 /* AppDelegate.swift in Sources */,
 			);

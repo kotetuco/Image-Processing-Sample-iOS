@@ -43,7 +43,7 @@
 #ifdef DEBUG
     endDate = [NSDate date];
     NSTimeInterval interval = [endDate timeIntervalSinceDate:startDate];
-    NSLog(@"処理時間 = %.3f秒",interval);
+    NSLog(@"Processing Time : %.5f (circleDetection)",interval);
 #endif
 
     return circleDetectionResults;

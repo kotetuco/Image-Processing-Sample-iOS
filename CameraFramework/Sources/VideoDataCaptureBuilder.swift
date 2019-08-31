@@ -79,7 +79,7 @@ public final class BasicVideoDataCaptureBuilder: VideoDataCaptureBuilder {
                 break
             }
 
-            // 手ブレ補正
+            // 手ブレ補正 (設定するとGLKView, MTKViewを使ったCIImageの表示が遅くなる)
             if connection.isVideoStabilizationSupported {
                 connection.preferredVideoStabilizationMode = .auto
             }

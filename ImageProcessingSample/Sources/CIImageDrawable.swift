@@ -2,7 +2,7 @@
 //  CIImageDrawable.swift
 //  ImageProcessingSample
 //
-//  Created by Kuriyama Toru on 2019/08/31.
+//  Created by kotetu on 2019/08/31.
 //  Copyright © 2019 kotetu. All rights reserved.
 //
 
