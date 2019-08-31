@@ -2,7 +2,7 @@
 //  MetalVideoPreview.swift
 //  ImageProcessingSample
 //
-//  Created by Kuriyama Toru on 2019/08/29.
+//  Created by kotetu on 2019/08/29.
 //  Copyright © 2019 kotetu. All rights reserved.
 //
 

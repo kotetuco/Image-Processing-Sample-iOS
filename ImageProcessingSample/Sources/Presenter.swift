@@ -19,6 +19,9 @@ protocol PresenterDelegate: AnyObject {
 }
 
 final class Presenter {
+    private let processingImageHeight: CGFloat = 1500
+    private let minimumDistance: Double = 20
+
     private let imageProcessor: ImageProcessor
     private let videoAccess: VideoAccess
 
@@ -89,20 +92,26 @@ final class Presenter {
     private func circleDetection(by ciImage: CIImage) {
         isProcessing = true
         guard let previewSize = previewSize, let uiImage = convert(from: ciImage) else { return }
+
         let aspectRatioForPreview = (previewSize.width / previewSize.height)
+        let processingScale = processingImageHeight / ciImage.extent.height
+
         // プレビュー表示されない領域幅の片側オフセット値(原寸大画像ベースで算出)
         // AVCaptureVideoPreviewLayerでvideoGravityをresizeAspectFillにした場合、縦については全て表示され
         // 左右は切り取られるように表示調整されることから、非表示領域内にある原点を考慮しこのような実装となっている
         let offsetX: CGFloat = (uiImage.size.width - (uiImage.size.height * aspectRatioForPreview)) / 2
-        let detectCircles = self.imageProcessor.circleDetection(from: uiImage, minimumDistance: 30)
-        let drawScale: CGFloat = previewSize.height / ciImage.extent.height
+        let drawScale: CGFloat = previewSize.height / uiImage.size.height
         // offsetXを表示スクリーン換算で算出
         let offsetForDrawScaleX = offsetX * drawScale
-        let drawableCircles = detectCircles.compactMap { circle -> Circle in
-            let center = CGPoint(x: (circle.center.x * drawScale) - offsetForDrawScaleX,
-                                 y: circle.center.y * drawScale)
-            return Circle(center: center, radius: circle.radius * drawScale )
+
+        let resizedImage = uiImage.resize(scale: processingScale)
+//        let resizedImage = uiImage.resizeOLD(scale: processingScale)!
+        let drawableCircles = imageProcessor.circleDetection(from: resizedImage, minimumDistance: minimumDistance).compactMap { circle -> Circle in
+            let center = CGPoint(x: ((circle.center.x / processingScale) * drawScale) - offsetForDrawScaleX,
+                                 y: ((circle.center.y / processingScale) * drawScale))
+            return Circle(center: center, radius: (circle.radius / processingScale) * drawScale)
         }
+
         delegate?.draw(circles: drawableCircles)
         isProcessing = false
     }
@@ -113,7 +122,14 @@ extension Presenter: VideoImageCaptureDelegate {
         delegate?.draw(ciImage: ciImage)
         if !isProcessing {
             circleDetectionQueue.async { [weak self] in
+                #if DEBUG
+                let start = Date()
+                #endif
                 self?.circleDetection(by: ciImage)
+                #if DEBUG
+                let interval = Date().timeIntervalSince(start)
+                NSLog("Processing Time : %.5f (Presenter#didOutput)", interval)
+                #endif
             }
         }
     }

@@ -261,13 +261,12 @@
 			isa = PBXGroup;
 			children = (
 				9C89180722EFA33400806DE5 /* AppDelegate.swift */,
-				9CAFC14A2302F8A50010D855 /* CIImage+Resize.swift */,
 				4A9F2BA0231A797E002E153B /* CIImageDrawable.swift */,
 				4A89DD5D2316F308001BD672 /* GLVideoPreview.swift */,
 				4A89DD5F2316F365001BD672 /* MetalVideoPreview.swift */,
 				9CAFC146230163F00010D855 /* Presenter.swift */,
-				4AC36CE1231A8F1B0006B590 /* UIImage+Resize.swift */,
 				9C89180922EFA33400806DE5 /* ViewController.swift */,
+				4AC36CE3231ABDC50006B590 /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -279,6 +278,15 @@
 				9C89181022EFA33500806DE5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4AC36CE3231ABDC50006B590 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9CAFC14A2302F8A50010D855 /* CIImage+Resize.swift */,
+				4AC36CE1231A8F1B0006B590 /* UIImage+Resize.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9C5E137722EFA5C9008EAEFF /* CameraFramework */ = {
