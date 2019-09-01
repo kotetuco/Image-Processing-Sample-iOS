@@ -110,7 +110,7 @@ extension Presenter: VideoImageCaptureDelegate {
 }
 
 private extension Presenter {
-    func circleDetectionResizeCIImage(by ciImage: CIImage) {
+    func circleDetectionResizeUIImage(by ciImage: CIImage) {
         isProcessing = true
         guard let previewSize = previewSize, let uiImage = convert(from: ciImage) else { return }
 
@@ -137,7 +137,7 @@ private extension Presenter {
         isProcessing = false
     }
 
-    func circleDetectionResizeUIImage(by ciImage: CIImage) {
+    func circleDetectionResizeCIImage(by ciImage: CIImage) {
         isProcessing = true
         let processingScale = processingImageHeight / ciImage.extent.height
 //        guard let previewSize = previewSize, let resizedImage = convert(from: ciImage, affine: processingScale) else { return }
