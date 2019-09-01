@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
 
         // CIImageの描画については下記設定を変更する
         drawView = mtkPreview
-        drawView.isHidden = false
+        drawView.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +65,19 @@ extension ViewController: PresenterDelegate {
     func draw(circles: [Circle]) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.detectCirclePreview.layer.sublayers = nil
-            circles.forEach({ circle in
+            self.drawShapeLayer(circles: circles)
+        }
+    }
+
+    func draw(ciImage: CIImage) {
+//        drawView.draw(image: ciImage)
+    }
+}
+
+private extension ViewController {
+    func drawShapeLayer(circles: [Circle]) {
+        detectCirclePreview.layer.sublayers
+            = circles.map({ circle -> CAShapeLayer in
                 let shapeLayer = CAShapeLayer()
                 let path = CGMutablePath()
                 path.addArc(center: circle.center,
@@ -78,12 +89,7 @@ extension ViewController: PresenterDelegate {
                 shapeLayer.strokeColor = UIColor.yellow.cgColor
                 shapeLayer.fillColor = nil
                 shapeLayer.lineWidth = 3.0
-                self.detectCirclePreview.layer.addSublayer(shapeLayer)
+                return shapeLayer
             })
-        }
-    }
-
-    func draw(ciImage: CIImage) {
-        drawView.draw(image: ciImage)
     }
 }
