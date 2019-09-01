@@ -72,7 +72,7 @@ extension ViewController: PresenterDelegate {
                 path.addArc(center: circle.center,
                             radius: circle.radius,
                             startAngle: 0,
-                            endAngle: CGFloat(Double.pi) * 2,
+                            endAngle: CGFloat.pi * 2,
                             clockwise: true)
                 shapeLayer.path = path
                 shapeLayer.strokeColor = UIColor.yellow.cgColor
