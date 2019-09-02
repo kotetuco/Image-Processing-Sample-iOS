@@ -9,11 +9,11 @@
 import CoreImage
 
 extension CIImage {
-    func resizeAffine(scale: CGFloat) -> CIImage? {
+    func resizeUsingAffine(to scale: CGFloat) -> CIImage? {
         return self.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
     }
 
-    func resizeLanczos(scale: CGFloat) -> CIImage? {
+    func resizeUsingLanczos(to scale: CGFloat) -> CIImage? {
         guard let filter = CIFilter(name: "CILanczosScaleTransform") else {
             return nil
         }
@@ -23,7 +23,7 @@ extension CIImage {
         return filter.outputImage
     }
 
-    func resizeBicubic(scale: CGFloat) -> CIImage? {
+    func resizeUsingBicubic(to scale: CGFloat) -> CIImage? {
         guard let filter = CIFilter(name: "CIBicubicScaleTransform") else {
             return nil
         }

@@ -184,7 +184,7 @@ private extension Presenter {
         return autoreleasepool { [weak self] in
             // UIImage -> CGImage -> UIImage
             guard let self = self,
-                let outputImage = ciImage.resizeLanczos(scale: scale),
+                let outputImage = ciImage.resizeUsingAffine(to: scale),
                 let cgImage = self.context.createCGImage(outputImage, from: outputImage.extent) else {
                     return nil
             }
@@ -197,7 +197,7 @@ private extension Presenter {
         return autoreleasepool { [weak self] in
             // UIImage -> CGImage -> UIImage
             guard let self = self,
-                let outputImage = ciImage.resizeAffine(scale: scale),
+                let outputImage = ciImage.resizeUsingLanczos(to: scale),
                 let cgImage = self.context.createCGImage(outputImage, from: outputImage.extent) else {
                     return nil
             }
@@ -210,7 +210,7 @@ private extension Presenter {
         return autoreleasepool { [weak self] in
             // UIImage -> CGImage -> UIImage
             guard let self = self,
-                let outputImage = ciImage.resizeBicubic(scale: scale),
+                let outputImage = ciImage.resizeUsingBicubic(to: scale),
                 let cgImage = self.context.createCGImage(outputImage, from: outputImage.extent) else {
                     return nil
             }
