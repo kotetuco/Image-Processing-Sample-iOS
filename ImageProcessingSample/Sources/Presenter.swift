@@ -125,8 +125,8 @@ private extension Presenter {
         // offsetXを表示スクリーン換算で算出
         let offsetForDrawScaleX = offsetX * drawScale
 
-//        let resizedImage = uiImage.resize(scale: processingScale)
-        let resizedImage = uiImage.resizeOLD(scale: processingScale)!
+        let resizedImage = uiImage.resize(to: processingScale)
+//        let resizedImage = uiImage.resizeForOLD(to: processingScale)!
         let drawableCircles = imageProcessor.circleDetection(from: resizedImage, minimumDistance: minimumDistance).compactMap { circle -> Circle in
             let center = CGPoint(x: ((circle.center.x / processingScale) * drawScale) - offsetForDrawScaleX,
                                  y: ((circle.center.y / processingScale) * drawScale))
