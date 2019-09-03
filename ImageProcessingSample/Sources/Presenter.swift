@@ -19,8 +19,8 @@ protocol PresenterDelegate: AnyObject {
 }
 
 final class Presenter {
-    private let processingImageHeight: CGFloat = 1500
-    private let minimumDistance: Double = 20
+    private let processingImageHeight: CGFloat = 1000
+    private let minimumDistance: Double = 10
 
     private let imageProcessor: ImageProcessor
     private let videoAccess: VideoAccess
