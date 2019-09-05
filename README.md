@@ -14,4 +14,4 @@ Before you build this, run `Scripts/Bootstrap.sh`.
 sh Scripts/Bootstrap.sh
 ```
 
-NOTE:　Because It uses **AVFoundation**, it can not run on Simulator.
+NOTE: Because It uses **AVFoundation**, it can not run on Simulator.
