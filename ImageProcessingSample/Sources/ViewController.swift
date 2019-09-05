@@ -11,9 +11,9 @@ import OpneCVImageProcessingFramework
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var cameraPreview: UIView!
-    @IBOutlet weak var detectCirclePreview: UIView!
-    @IBOutlet weak var glkPreview: GLVideoPreview!
-    @IBOutlet weak var mtkPreview: MetalVideoPreview!
+    @IBOutlet private weak var detectCirclePreview: UIView!
+    @IBOutlet private weak var glkPreview: GLVideoPreview!
+    @IBOutlet private weak var mtkPreview: MetalVideoPreview!
 
     /// CIImageの描画先Viewを指定する(GLVideoPreview or MetalVideoPreview)
     private var drawView: CIImageDrawable!

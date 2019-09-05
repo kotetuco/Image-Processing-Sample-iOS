@@ -8,7 +8,8 @@
 
 import GLKit
 
-// GLKViewはiOS12でdeprecatedになったので、検証目的以外では使用しないでください。
+/// GLKViewを使ったプレビュー表示用クラス
+/// (GLKViewはiOS12でdeprecatedになったので、検証目的以外では使用しないでください。)
 final class GLVideoPreview: GLKView {
     private let ciContext: CIContext?
 
